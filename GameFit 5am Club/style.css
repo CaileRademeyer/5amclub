@@ -1,0 +1,219 @@
+:root {
+  --primary: #0033a0;
+  --secondary: #d4001c;
+  --accent: #ffd200;
+  --bg: #f2f5fb;
+  --text: #111;
+  --muted: #4a4a4a;
+  --card: rgba(255, 255, 255, 0.92);
+  --shadow: rgba(0, 0, 0, 0.16);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.55;
+  background: radial-gradient(circle at top, rgba(0, 51, 160, 0.18), transparent 55%),
+    radial-gradient(circle at bottom, rgba(212, 0, 28, 0.17), transparent 60%),
+    var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.site-header {
+  padding: 3rem 0 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(0, 51, 160, 0.92), rgba(212, 0, 28, 0.88));
+  color: white;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.brand-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.logo {
+  width: 160px;
+  height: auto;
+  max-height: 128px;
+  border-radius: 16px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.66);
+}
+
+@media (max-width: 520px) {
+  .logo {
+    width: 140px;
+    max-height: 112px;
+  }
+}
+
+.brand {
+  margin: 0;
+  font-size: clamp(2.1rem, 5vw, 3rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.tagline {
+  margin: 0.7rem auto 0;
+  max-width: 720px;
+  font-size: 1.1rem;
+  opacity: 0.93;
+}
+
+.hero {
+  padding: 3.6rem 0 2.4rem;
+}
+
+.hero h2 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin: 0 0 1rem;
+  color: var(--primary);
+}
+
+.hero p {
+  max-width: 780px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+section {
+  padding: 3rem 0;
+}
+
+section h3 {
+  font-size: 1.9rem;
+  margin: 0 0 1.2rem;
+  text-align: center;
+  color: var(--primary);
+}
+
+.info p {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.4rem;
+  margin-top: 1.8rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: 0 18px 40px var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 46px rgba(0, 0, 0, 0.3);
+}
+
+.card h4 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  color: var(--secondary);
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.drill-list {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.drill-list li {
+  padding: 1.1rem 1.3rem;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.75);
+  border-left: 6px solid var(--primary);
+  color: var(--muted);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.contact-info a {
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.note {
+  margin-top: 1.2rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--muted);
+}
+
+.site-footer {
+  padding: 2.4rem 0;
+  background: rgba(0, 0, 0, 0.08);
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    padding: 2.2rem 0 1.6rem;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .cards {
+    gap: 1rem;
+  }
+}
